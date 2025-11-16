@@ -1,15 +1,16 @@
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #fff4f8;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(180deg, #fff4f8, #ffe6f2);
   color: #5a0030;
   line-height: 1.6;
   text-align: center;
   padding-bottom: 60px;
 }
 
+/* Main sections */
 .hero {
-  padding: 40px 20px;
+  padding: 40px 20px 20px;
 }
 
 h1 {
@@ -17,6 +18,24 @@ h1 {
   margin-bottom: 10px;
 }
 
+.hero p {
+  font-size: 18px;
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+
+#music-btn {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 15px;
+  cursor: pointer;
+  background: #e3006d;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(227, 0, 109, 0.3);
+}
+
+/* Section titles */
 .photos h2,
 .love-list h2,
 .proposal h2 {
@@ -24,27 +43,54 @@ h1 {
   margin-top: 40px;
 }
 
+.hint {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Gallery */
 .gallery {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
   margin: 20px;
-  flex-wrap: wrap;
+  padding: 0 10px;
 }
 
 .gallery img {
-  width: 160px;
-  height: 200px;
+  width: 100%;
+  height: 180px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 14px;
   border: 3px solid #e3006d;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Love list */
 .love-list ol {
   text-align: left;
-  width: 85%;
-  margin: auto;
-  font-size: 17px;
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto 0;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+/* Proposal */
+.proposal {
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+.proposal p {
+  max-width: 550px;
+  margin: 0 auto 10px;
 }
 
 .proposal h3 {
@@ -61,4 +107,25 @@ h1 {
   font-size: 18px;
   display: inline-block;
   margin-top: 15px;
+  box-shadow: 0 8px 20px rgba(227, 0, 109, 0.45);
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  font-size: 22px;
+  pointer-events: none;
+  animation: floatUp 3s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.6);
+    opacity: 0;
+  }
 }
