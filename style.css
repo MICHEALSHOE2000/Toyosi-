@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #fff4f8;
+  color: #5a0030;
+  line-height: 1.6;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.hero {
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.photos h2,
+.love-list h2,
+.proposal h2 {
+  font-size: 26px;
+  margin-top: 40px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 160px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #e3006d;
+}
+
+.love-list ol {
+  text-align: left;
+  width: 85%;
+  margin: auto;
+  font-size: 17px;
+}
+
+.proposal h3 {
+  font-size: 22px;
+  margin: 20px 0;
+}
+
+.btn {
+  background: #e3006d;
+  color: white;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 30px;
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 15px;
+}
