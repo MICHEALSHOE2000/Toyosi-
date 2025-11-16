@@ -1,49 +1,52 @@
-// MUSIC CONTROL
-const music = document.getElementById("bg-music");
-const musicBtn = document.getElementById("music-btn");
-
-if (music && musicBtn) {
-  let isPlaying = false;
-
-  musicBtn.addEventListener("click", () => {
-    if (!isPlaying) {
-      music.play().then(() => {
-        isPlaying = true;
-        musicBtn.textContent = "Pause Love Song ⏸️";
-      }).catch(() => {
-        // If browser blocks autoplay, user will have to tap again
+/* ===============================
+   Smooth Scroll on "Tap to begin"
+   =============================== */
+   document.addEventListener("DOMContentLoaded", () => {
+    const btnStart = document.getElementById("btnStart");
+    const storySection = document.getElementById("story");
+  
+    if (btnStart && storySection) {
+      btnStart.addEventListener("click", () => {
+        storySection.scrollIntoView({ behavior: "smooth" });
       });
-    } else {
-      music.pause();
-      isPlaying = false;
-      musicBtn.textContent = "Play Love Song 🎵";
     }
+  
+    /* ===============================
+       Scroll Reveal Animation
+       =============================== */
+    const revealElements = document.querySelectorAll(
+      ".section, .story-block, .timeline-item, .love-card, .reasons-item, .gallery-item, .proposal-inner"
+    );
+  
+    const revealOnScroll = () => {
+      revealElements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.88) {
+          el.classList.add("reveal--visible");
+        }
+      });
+    };
+  
+    revealElements.forEach((el) => el.classList.add("reveal"));
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  
+    /* ===============================
+       WhatsApp Redirect on YES
+       =============================== */
+    const btnYes = document.getElementById("btnYes");
+    const btnOfCourse = document.getElementById("btnOfCourse");
+  
+    const whatsappNumber = "2347086865133"; // your number without the +
+    const message = encodeURIComponent("Micheal, I want to be your girlfriend 💕");
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+  
+    const redirectToWhatsApp = () => {
+      window.location.href = whatsappLink;
+    };
+  
+    if (btnYes) btnYes.addEventListener("click", redirectToWhatsApp);
+    if (btnOfCourse) btnOfCourse.addEventListener("click", redirectToWhatsApp);
+  
   });
-}
-
-// FLOATING HEARTS
-function createHeart(x, y) {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.textContent = "💗";
-  heart.style.left = x + "px";
-  heart.style.top = y + "px";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 3000);
-}
-
-// Hearts on click
-document.addEventListener("click", (e) => {
-  createHeart(e.clientX, e.clientY);
-});
-
-// Gentle random hearts floating
-setInterval(() => {
-  const x = Math.random() * window.innerWidth;
-  const y = window.innerHeight - 50;
-  createHeart(x, y);
-}, 1200);
+  
