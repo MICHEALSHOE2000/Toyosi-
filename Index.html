@@ -1,91 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Toyosi, My Heartbeat 💗</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- 
+    Meta information for proper rendering and accessibility 
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Omotoyosi 💕</title>
+
+  <!-- Link to external CSS file (will be created in Stage 3) -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- 
+    Main wrapper for the whole page
+    Helps with layout and styling in CSS
+  -->
+  <div class="page-wrapper">
 
-  <!-- Background Music -->
-  <audio id="bg-music" loop>
-    <!-- Replace "fola-love-song.mp3" with your own mp3 filename -->
-    <source src="fola-love-song.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- =========================
+         HERO / INTRO SECTION
+         ========================= -->
+    <header id="hero" class="section section--hero" aria-label="Introduction">
+      <div class="hero-content">
+        <p class="hero-small-text">For</p>
+        <h1 class="hero-title">Omotoyosi 💕</h1>
+        <p class="hero-subtitle">
+          I made something special just for you. Please read this with your heart.
+        </p>
+        <button class="btn btn--primary" id="btnStart">
+          Tap to begin
+        </button>
+      </div>
+    </header>
 
-  <section class="hero">
-    <h1>Toyosi, My Heartbeat 💗</h1>
-    <p>You make my world softer, sweeter and safer. I am better because of you.</p>
+    <!-- Start of main content -->
+    <main>
 
-    <button id="music-btn">Play Love Song 🎵</button>
-  </section>
+      <!-- =========================
+           OUR STORY SECTION
+           ========================= -->
+      <section id="story" class="section section--story" aria-label="Our story">
+        <div class="section-inner">
+          <h2 class="section-title">Our Story</h2>
+          <p class="section-intro">
+            This is not just about a boy and a girl. It’s about you, me, and how you showed up in my life when I needed someone the most.
+          </p>
 
-  <section class="photos">
-    <h2>Our Moments Together</h2>
-    <p class="hint">These are just a few of my favorite memories of us…</p>
-    <div class="gallery">
-      <!-- Replace each src with your real image paths or URLs -->
-      <img src="images/photo1.jpg" alt="Us 1">
-      <img src="images/photo2.jpg" alt="Us 2">
-      <img src="images/photo3.jpg" alt="Us 3">
-      <img src="images/photo4.jpg" alt="Us 4">
-      <img src="images/photo5.jpg" alt="Us 5">
-      <img src="images/photo6.jpg" alt="Us 6">
-      <img src="images/photo7.jpg" alt="Us 7">
-      <img src="images/photo8.jpg" alt="Us 8">
+          <article class="story-block">
+            <h3 class="story-heading">How We Met</h3>
+            <p class="story-text">
+              We didn’t start as lovers. We didn’t even start as close friends. But from the very beginning, there was something special about you. 
+              I noticed your kindness, your intelligence, and the way you carried yourself. Even before we became close, you already stood out in my mind.
+            </p>
+          </article>
+
+          <article class="story-block">
+            <h3 class="story-heading">You Were There at My Lowest</h3>
+            <p class="story-text">
+              I will never forget the days when I was at my lowest, when life was beating me like Nigerian fuel price. 
+              You were there for me — before we were even close, before we were even friends. 
+              The daily calls, the way you listened, the way you reminded me that I wasn’t alone… 
+              I don’t think you know how much that meant to me. You showed up for me in a way I can never forget.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- =========================
+           LETTER SECTION
+           ========================= -->
+      <section id="letter" class="section section--letter" aria-label="Personal letter to Omotoyosi">
+        <div class="section-inner letter-card">
+          <h2 class="section-title section-title--center">A Letter To You</h2>
+          <!-- This first line can have a typewriter effect later with JavaScript -->
+          <p class="letter-greeting" id="letterGreeting">Dear Omotoyosi,</p>
+
+          <div class="letter-body">
+            <p>
+              I don’t know the perfect way to say everything in my heart, but I’ll start with this: 
+              I am grateful for you. For your presence in my life. For your patience with me. For the way you’ve stayed.
+            </p>
+            <p>
+              I will never forget the days when I was at my lowest, when life felt heavy and confusing. 
+              You were there — with daily calls, check-ins, and small messages that meant more than you probably realized. 
+              You listened, you encouraged me, and you reminded me that I wasn’t alone.
+            </p>
+            <p>
+              You didn’t wait to be my girlfriend before you cared. You cared first. You showed up first. 
+              And that’s one of the many reasons why you’re so special to me.
+            </p>
+            <p>
+              This page is my small way of saying thank you… and also asking for something more.
+            </p>
+          </div>
+
+          <p class="letter-signature">
+            Your Sweet Boy,<br>
+            <span class="signature-name">Micheal</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================
+           THINGS I LOVE ABOUT YOU
+           ========================= -->
+      <section id="love" class="section section--love" aria-label="Things I love about you">
+        <div class="section-inner">
+          <h2 class="section-title">Things I Love About You</h2>
+          <p class="section-intro">
+            These are just a few of the many things I love about you, Toyosi.
+          </p>
+
+          <div class="love-grid" role="list">
+            <!-- Each love-card is one thing you love about her -->
+            <article class="love-card" role="listitem">
+              <h3 class="love-title">Your Intelligence</h3>
+              <p class="love-text">
+                The way your mind works amazes me. The way you think, reason, and understand things makes me respect you deeply.
+              </p>
+            </article>
+
+            <article class="love-card" role="listitem">
+              <h3 class="love-title">The Way You Check on Me</h3>
+              <p class="love-text">
+                Even when you’re busy, you still check on me. Those “How are you really?” messages mean more to me than you know.
+              </p>
+            </article>
+
+            <article class="love-card" role="listitem">
+              <h3 class="love-title">You Push Me to Be Better</h3>
+              <p class="love-text">
+                You don’t let me settle. You push me to become a better man, to do more, to grow, and to believe in myself.
+              </p>
+            </article>
+
+            <article class="love-card" role="listitem">
+              <h3 class="love-title">Your Beauty</h3>
+              <p class="love-text">
+                Your beauty, inside and out, is something I don’t ever take for granted. You light up every space you enter.
+              </p>
+            </article>
+
+            <article class="love-card" role="listitem">
+              <h3 class="love-title">Your Laugh</h3>
+              <p class="love-text">
+                The way you laugh at my dry jokes (even when they’re not that funny) makes me feel like the funniest guy in the world.
+              </p>
+            </article>
+
+            <article class="love-card" role="listitem">
+              <h3 class="love-title">You Understand Me</h3>
+              <p class="love-text">
+                Somehow, you understand me even when I don’t say much. That kind of connection is rare, and I don’t take it lightly.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+           REASONS TO BE OFFICIAL
+           ========================= -->
+      <section id="reasons" class="section section--reasons" aria-label="Reasons to be official">
+        <div class="section-inner">
+          <h2 class="section-title">Why I Want Us to Be Official</h2>
+          <p class="section-intro">
+            We’ve been friends for years. We’ve started seeing each other. But my heart wants more than “almost”.
+          </p>
+
+          <ul class="reasons-list">
+            <li class="reasons-item">
+              I want to be intentional with you — not just vibes, but something real.
+            </li>
+            <li class="reasons-item">
+              I want you to know that I choose you, clearly and openly, not in secret.
+            </li>
+            <li class="reasons-item">
+              I want to build with you, grow with you, and keep becoming better together.
+            </li>
+            <li class="reasons-item">
+              I don’t just want to call, text, and see you. I want to call you my girlfriend.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+     <!-- =========================
+     PHOTO GALLERY
+     ========================= -->
+<section id="gallery" class="section section--gallery" aria-label="Photo memories">
+    <div class="section-inner">
+      <h2 class="section-title">Pieces of Us 🤍</h2>
+      <p class="section-intro">
+        Some people keep phone wallpapers, me? I keep your pictures and the 
+        moments that make my chest do gbish gbish every time I remember you. 😊
+      </p>
+      
+  
+      <div class="gallery-grid">
+        <figure class="polaroid-item">
+          <img src="img/bab.jpg" alt="Her picture looking beautiful" class="polaroid-img">
+          <figcaption class="polaroid-caption">Your picture dey light my world, no inverter needed 😌</figcaption>
+        </figure>
+  
+        <figure class="polaroid-item">
+          <img src="img/baby.jpg" alt="Her fine picture" class="polaroid-img">
+          <figcaption class="polaroid-caption">our picture collection</figcaption>
+        </figure>
+  
+        <figure class="polaroid-item">
+          <img src="img/babya.jpg" alt="Video call moment" class="polaroid-img">
+          <figcaption class="polaroid-caption">See Beauty, My Addiction.</figcaption>
+        </figure>
+  
+        <figure class="polaroid-item">
+          <img src="img/babyb.jpg" alt="Memory that made you sure" class="polaroid-img">
+          <figcaption class="polaroid-caption">This was the moment I said, “Na this girl I wan hold tight.”</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
+  
+      <!-- =========================
+           FINAL PROPOSAL SECTION
+           ========================= -->
+      <section id="proposal" class="section section--proposal" aria-label="Final proposal">
+        <div class="section-inner proposal-inner">
+          <h2 class="section-title section-title--center">
+            So Now, I Have One Question...
+          </h2>
 
-  <section class="love-list">
-    <h2>25 Things I Love About You</h2>
-    <ol>
-      <li>Your smile — it heals me.</li>
-      <li>Your voice — my favorite sound.</li>
-      <li>The way you call my name.</li>
-      <li>Your playful spirit.</li>
-      <li>Your kindness to people.</li>
-      <li>Your beautiful heart.</li>
-      <li>Your loyalty.</li>
-      <li>Your laughter — priceless.</li>
-      <li>Your confidence.</li>
-      <li>The way you love deeply.</li>
-      <li>Your eyes — full of light.</li>
-      <li>Your strength and courage.</li>
-      <li>Your goofy jokes.</li>
-      <li>Your intelligence.</li>
-      <li>Your hugs — home.</li>
-      <li>Your care for family.</li>
-      <li>Your pure intentions.</li>
-      <li>Your creativity.</li>
-      <li>Your passion for life.</li>
-      <li>Your cuteness when you're serious 😂</li>
-      <li>Your honesty.</li>
-      <li>Your dreams and ambitions.</li>
-      <li>Your warmth when I need comfort.</li>
-      <li>Your love for God.</li>
-      <li>The way you make me want to be better.</li>
-    </ol>
-  </section>
+          <p class="proposal-text">
+            Omotoyosi, after everything we’ve shared, everything we’ve been through, 
+            and everything I feel for you...
+          </p>
 
-  <section class="proposal">
-    <h2>I Have One Question… 💍</h2>
-    <p>
-      Toyosi, I don’t want to call you just someone I’m seeing.  
-      I want to call you my girlfriend. My woman. My partner.  
-      So today I am asking with all my heart:
-    </p>
-    <h3>Will you be my girlfriend officially? 💗</h3>
+          <p class="proposal-question">
+            Will you be my girlfriend?
+          </p>
 
-    <a
-      class="btn"
-      href="https://wa.me/2347086865133?text=My%20Answer%20is%20YES%20💞"
-      target="_blank"
-    >
-      My Answer is YES 💞
-    </a>
-  </section>
+          <div class="proposal-buttons">
+            <!-- These buttons will be wired with JavaScript in Stage 4 -->
+            <button class="btn btn--primary" id="btnYes">
+              Yes 💕
+            </button>
+            <button class="btn btn--secondary" id="btnOfCourse">
+              Of course, yes 😌
+            </button>
+          </div>
 
+          <!-- This message will be shown after she clicks Yes (with JS later) -->
+          <div class="proposal-response" id="proposalResponse" aria-live="polite">
+            <!-- JavaScript will insert a sweet message here -->
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+    <footer class="footer" aria-label="Footer">
+      <p class="footer-text">
+        Made with love by Your Sweet Boy, Micheal.
+      </p>
+    </footer>
+  </div>
+
+  <!-- Link to external JavaScript file (will be created in Stage 4) -->
   <script src="script.js"></script>
 </body>
 </html>
