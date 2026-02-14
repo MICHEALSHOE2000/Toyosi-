@@ -1,275 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
-    Meta information for proper rendering and accessibility 
-  -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Omotoyosi 💕</title>
-
-  <!-- Link to external CSS file (will be created in Stage 3) -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine Toyosi ❤️</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 
-    Main wrapper for the whole page
-    Helps with layout and styling in CSS
-  -->
-  <div class="page-wrapper">
 
-    <!-- =========================
-         HERO / INTRO SECTION
-         ========================= -->
-    <header id="hero" class="section section--hero" aria-label="Introduction">
-      <div class="hero-content">
-        <p class="hero-small-text">For</p>
-        <h1 class="hero-title">Omotoyosi 💕</h1>
-        <p class="hero-subtitle">
-          I made something special just for you. Please read this with your heart.
-        </p>
-        <button class="btn btn--primary" id="btnStart">
-          Tap to begin
-        </button>
-      </div>
+    <!-- ================= HERO SECTION ================= -->
+    <header class="hero" id="home">
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="main-title">Happy Valentine, Toyosi ❤️</h1>
+            <h2 class="nickname">My Babe 💕</h2>
+
+            <p class="typewriter-text" id="typewriter"></p>
+
+            <button class="scroll-btn" id="scrollDown">
+                Begin Our Story ↓
+            </button>
+        </div>
     </header>
 
-    <!-- Start of main content -->
-    <main>
 
-      <!-- =========================
-           OUR STORY SECTION
-           ========================= -->
-      <section id="story" class="section section--story" aria-label="Our story">
-        <div class="section-inner">
-          <h2 class="section-title">Our Story</h2>
-          <p class="section-intro">
-            This is not just about a boy and a girl. It’s about you, me, and how you showed up in my life when I needed someone the most.
-          </p>
+    <!-- ================= CELEBRATION SECTION ================= -->
+    <section class="celebration-section">
+        <h2>Today Is Our Valentine’s Day 💖</h2>
+        <p class="celebration-text">
+            Today is not just another day…  
+            It’s a celebration of us, our memories, our love,
+            and the beautiful journey we are building together.
+        </p>
+    </section>
 
-          <article class="story-block">
-            <h3 class="story-heading">How We Met</h3>
-            <p class="story-text">
-              We didn’t start as lovers. We didn’t even start as close friends. But from the very beginning, there was something special about you. 
-              I noticed your kindness, your intelligence, and the way you carried yourself. Even before we became close, you already stood out in my mind.
-            </p>
-          </article>
 
-          <article class="story-block">
-            <h3 class="story-heading">You Were There at My Lowest</h3>
-            <p class="story-text">
-              I will never forget the days when I was at my lowest, when life was beating me like Nigerian fuel price. 
-              You were there for me — before we were even close, before we were even friends. 
-              The daily calls, the way you listened, the way you reminded me that I wasn’t alone… 
-              I don’t think you know how much that meant to me. You showed up for me in a way I can never forget.
-            </p>
-          </article>
+    <!-- ================= PHOTO GALLERY ================= -->
+    <section class="gallery-section" id="memories">
+        <h2>Our Beautiful Memories 📸</h2>
+
+        <div class="gallery-grid">
+            <img src="images/photo1.jpg" alt="Memory 1" class="gallery-img">
+            <img src="images/photo2.jpg" alt="Memory 2" class="gallery-img">
+            <img src="images/photo3.jpg" alt="Memory 3" class="gallery-img">
+            <img src="images/photo4.jpg" alt="Memory 4" class="gallery-img">
+            <img src="images/photo5.jpg" alt="Memory 5" class="gallery-img">
+            <img src="images/photo6.jpg" alt="Memory 6" class="gallery-img">
+            <img src="images/photo7.jpg" alt="Memory 7" class="gallery-img">
+            <img src="images/photo8.jpg" alt="Memory 8" class="gallery-img">
+            <img src="images/photo9.jpg" alt="Memory 9" class="gallery-img">
+            <img src="images/photo10.jpg" alt="Memory 10" class="gallery-img">
         </div>
-      </section>
+    </section>
 
-      <!-- =========================
-           LETTER SECTION
-           ========================= -->
-      <section id="letter" class="section section--letter" aria-label="Personal letter to Omotoyosi">
-        <div class="section-inner letter-card">
-          <h2 class="section-title section-title--center">A Letter To You</h2>
-          <!-- This first line can have a typewriter effect later with JavaScript -->
-          <p class="letter-greeting" id="letterGreeting">Dear Omotoyosi,</p>
 
-          <div class="letter-body">
-            <p>
-              I don’t know the perfect way to say everything in my heart, but I’ll start with this: 
-              I am grateful for you. For your presence in my life. For your patience with me. For the way you’ve stayed.
-            </p>
-            <p>
-              I will never forget the days when I was at my lowest, when life felt heavy and confusing. 
-              You were there — with daily calls, check-ins, and small messages that meant more than you probably realized. 
-              You listened, you encouraged me, and you reminded me that I wasn’t alone.
-            </p>
-            <p>
-              You didn’t wait to be my girlfriend before you cared. You cared first. You showed up first. 
-              And that’s one of the many reasons why you’re so special to me.
-            </p>
-            <p>
-              This page is my small way of saying thank you… and also asking for something more.
-            </p>
-          </div>
+    <!-- ================= VIDEO SECTION ================= -->
+    <section class="video-section" id="videos">
+        <h2>Our Special Moments 🎥</h2>
 
-          <p class="letter-signature">
-            Your Sweet Boy,<br>
-            <span class="signature-name">Micheal</span>
-          </p>
+        <div class="video-grid">
+            <video controls class="video-card">
+                <source src="videos/video1.mp4" type="video/mp4">
+            </video>
+
+            <video controls class="video-card">
+                <source src="videos/video2.mp4" type="video/mp4">
+            </video>
+
+            <video controls class="video-card">
+                <source src="videos/video3.mp4" type="video/mp4">
+            </video>
         </div>
-      </section>
+    </section>
 
-      <!-- =========================
-           THINGS I LOVE ABOUT YOU
-           ========================= -->
-      <section id="love" class="section section--love" aria-label="Things I love about you">
-        <div class="section-inner">
-          <h2 class="section-title">Things I Love About You</h2>
-          <p class="section-intro">
-            These are just a few of the many things I love about you, Toyosi.
-          </p>
 
-          <div class="love-grid" role="list">
-            <!-- Each love-card is one thing you love about her -->
-            <article class="love-card" role="listitem">
-              <h3 class="love-title">Your Intelligence</h3>
-              <p class="love-text">
-                The way your mind works amazes me. The way you think, reason, and understand things makes me respect you deeply.
-              </p>
-            </article>
+    <!-- ================= LOVE LETTER SECTION ================= -->
+    <section class="letter-section" id="love-letter">
+        <h2>A Letter From My Heart 💌</h2>
 
-            <article class="love-card" role="listitem">
-              <h3 class="love-title">The Way You Check on Me</h3>
-              <p class="love-text">
-                Even when you’re busy, you still check on me. Those “How are you really?” messages mean more to me than you know.
-              </p>
-            </article>
+        <article class="letter-content">
+            <p>
+                Toyosi, my babe… ❤️  
+                From the day you came into my life, everything changed.
+                You make me better. You push me to grow.
+                You believe in me even when I struggle to believe in myself.
+            </p>
 
-            <article class="love-card" role="listitem">
-              <h3 class="love-title">You Push Me to Be Better</h3>
-              <p class="love-text">
-                You don’t let me settle. You push me to become a better man, to do more, to grow, and to believe in myself.
-              </p>
-            </article>
+            <p>
+                Every moment with you is a blessing.
+                Every laugh, every memory, every smile.
+                I honestly cannot imagine my life without you.
+            </p>
 
-            <article class="love-card" role="listitem">
-              <h3 class="love-title">Your Beauty</h3>
-              <p class="love-text">
-                Your beauty, inside and out, is something I don’t ever take for granted. You light up every space you enter.
-              </p>
-            </article>
+            <p class="signature">
+                Forever yours 💕
+            </p>
+        </article>
+    </section>
 
-            <article class="love-card" role="listitem">
-              <h3 class="love-title">Your Laugh</h3>
-              <p class="love-text">
-                The way you laugh at my dry jokes (even when they’re not that funny) makes me feel like the funniest guy in the world.
-              </p>
-            </article>
 
-            <article class="love-card" role="listitem">
-              <h3 class="love-title">You Understand Me</h3>
-              <p class="love-text">
-                Somehow, you understand me even when I don’t say much. That kind of connection is rare, and I don’t take it lightly.
-              </p>
-            </article>
-          </div>
+    <!-- ================= FINAL SECTION ================= -->
+    <section class="final-section" id="final">
+        <h2>Happy Valentine’s Day My Love ❤️</h2>
+
+        <button id="valentineBtn" class="valentine-btn">
+            Click For A Surprise 💖
+        </button>
+    </section>
+
+
+    <!-- ================= SURPRISE POPUP ================= -->
+    <div class="popup" id="surprisePopup">
+        <div class="popup-content">
+            <h3>Surprise! 🎉</h3>
+            <p>
+                Toyosi, you are my peace, my joy, my motivation.
+                I am grateful for you every single day.
+                Happy Valentine’s Day, my babe ❤️
+            </p>
+            <button id="closePopup">Close</button>
         </div>
-      </section>
-
-      <!-- =========================
-           REASONS TO BE OFFICIAL
-           ========================= -->
-      <section id="reasons" class="section section--reasons" aria-label="Reasons to be official">
-        <div class="section-inner">
-          <h2 class="section-title">Why I Want Us to Be Official</h2>
-          <p class="section-intro">
-            We’ve been friends for years. We’ve started seeing each other. But my heart wants more than “almost”.
-          </p>
-
-          <ul class="reasons-list">
-            <li class="reasons-item">
-              I want to be intentional with you — not just vibes, but something real.
-            </li>
-            <li class="reasons-item">
-              I want you to know that I choose you, clearly and openly, not in secret.
-            </li>
-            <li class="reasons-item">
-              I want to build with you, grow with you, and keep becoming better together.
-            </li>
-            <li class="reasons-item">
-              I don’t just want to call, text, and see you. I want to call you my girlfriend.
-            </li>
-          </ul>
-        </div>
-      </section>
-
-     <!-- =========================
-     PHOTO GALLERY
-     ========================= -->
-<section id="gallery" class="section section--gallery" aria-label="Photo memories">
-    <div class="section-inner">
-      <h2 class="section-title">Pieces of Us 🤍</h2>
-      <p class="section-intro">
-        Some people keep phone wallpapers, me? I keep your pictures and the 
-        moments that make my chest do gbish gbish every time I remember you. 😊
-      </p>
-      
-  
-      <div class="gallery-grid">
-        <figure class="polaroid-item">
-          <img src="img/bab.jpg" alt="Her picture looking beautiful" class="polaroid-img">
-          <figcaption class="polaroid-caption">Your picture dey light my world, no inverter needed 😌</figcaption>
-        </figure>
-  
-        <figure class="polaroid-item">
-          <img src="img/baby.jpg" alt="Her fine picture" class="polaroid-img">
-          <figcaption class="polaroid-caption">our picture collection</figcaption>
-        </figure>
-  
-        <figure class="polaroid-item">
-          <img src="img/babya.jpg" alt="Video call moment" class="polaroid-img">
-          <figcaption class="polaroid-caption">See Beauty, My Addiction.</figcaption>
-        </figure>
-  
-        <figure class="polaroid-item">
-          <img src="img/babyb.jpg" alt="Memory that made you sure" class="polaroid-img">
-          <figcaption class="polaroid-caption">This was the moment I said, “Na this girl I wan hold tight.”</figcaption>
-        </figure>
-      </div>
     </div>
-  </section>
-  
-      <!-- =========================
-           FINAL PROPOSAL SECTION
-           ========================= -->
-      <section id="proposal" class="section section--proposal" aria-label="Final proposal">
-        <div class="section-inner proposal-inner">
-          <h2 class="section-title section-title--center">
-            So Now, I Have One Question...
-          </h2>
 
-          <p class="proposal-text">
-            Omotoyosi, after everything we’ve shared, everything we’ve been through, 
-            and everything I feel for you...
-          </p>
 
-          <p class="proposal-question">
-            Will you be my girlfriend?
-          </p>
+    <!-- ================= MUSIC PLAYER ================= -->
+    <audio id="bgMusic" loop>
+        <source src="music/running-to-you.mphop3" type="audio/mpeg">
+    </audio>
 
-          <div class="proposal-buttons">
-            <!-- These buttons will be wired with JavaScript in Stage 4 -->
-            <button class="btn btn--primary" id="btnYes">
-              Yes 💕
-            </button>
-            <button class="btn btn--secondary" id="btnOfCourse">
-              Of course, yes 😌
-            </button>
-          </div>
+    <button id="musicToggle" class="music-toggle">
+        🎵 Play Music
+    </button>
 
-          <!-- This message will be shown after she clicks Yes (with JS later) -->
-          <div class="proposal-response" id="proposalResponse" aria-live="polite">
-            <!-- JavaScript will insert a sweet message here -->
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- =========================
-         FOOTER
-         ========================= -->
-    <footer class="footer" aria-label="Footer">
-      <p class="footer-text">
-        Made with love by Your Sweet Boy, Micheal.
-      </p>
-    </footer>
-  </div>
-
-  <!-- Link to external JavaScript file (will be created in Stage 4) -->
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
