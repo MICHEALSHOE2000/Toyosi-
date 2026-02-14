@@ -1,659 +1,317 @@
-/* 
-  =========================================
-  GLOBAL STYLES
-  - Base reset
-  - Typography
-  - Colors
-  - Layout helpers
-  =========================================
-*/
+/* ============================= */
+/* GLOBAL RESET & BASE STYLES */
+/* ============================= */
 
-/* Simple CSS reset to remove default spacing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* 
-  Define a soft romantic color palette 
-  You can tweak these later if you like.
-*/
-:root {
-  --color-bg: #fff7f8;           /* Soft light pink background */
-  --color-bg-card: #ffffff;      /* White for cards/sections */
-  --color-primary: #ff6b81;      /* Soft romantic pink/red */
-  --color-primary-soft: #ffe1e6; /* Very light pink for highlights */
-  --color-secondary: #ffbfae;    /* Peach accent */
-  --color-text-main: #2b2633;    /* Main dark text */
-  --color-text-soft: #6b6474;    /* Softer text */
-  --color-border-soft: #f3d9df;  /* Light border color */
-
-  --radius-lg: 18px;
-  --radius-xl: 26px;
-
-  --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.06);
-
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  --font-script: "Brush Script MT", "Segoe Script", cursive;
-
-  --transition-fast: 0.2s ease-out;
-  --transition-med: 0.35s ease;
-}
-
-/* Page background and default font */
-body {
-  font-family: var(--font-main);
-  background: radial-gradient(circle at top left, #ffe8ed 0, var(--color-bg) 45%, #fff 100%);
-  color: var(--color-text-main);
-  line-height: 1.6;
-}
-
-/* Wrapper to keep content centered on wide screens */
-.page-wrapper {
-  min-height: 100vh;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 16px 12px 40px;
-}
-
-/* Make images scale nicely on small screens */
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Basic link styling (not heavily used here but kept consistent) */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:hover,
-a:focus-visible {
-  text-decoration: underline;
-}
-
-/* Smooth scroll for anchor jumps & JS scroll */
+/* Smooth scrolling */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
-/* 
-  =========================================
-  REUSABLE SECTION STYLES
-  =========================================
-*/
-
-.section {
-  padding: 40px 16px;
+/* Body styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff0f5;
+    color: #333;
+    overflow-x: hidden;
 }
 
-/* Inner wrapper to keep content centered */
-.section-inner {
-  max-width: 760px;
-  margin: 0 auto;
+/* Section spacing */
+section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-/* Section titles */
-.section-title {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-  color: var(--color-text-main);
+/* Headings */
+h1, h2 {
+    margin-bottom: 20px;
 }
 
-.section-title--center {
-  text-align: center;
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #ff4d6d, #ff8fab);
+    color: white;
+    overflow: hidden;
 }
 
-/* Intro text under headings */
-.section-intro {
-  color: var(--color-text-soft);
-  margin-bottom: 20px;
-  font-size: 0.98rem;
-}
-
-/* 
-  =========================================
-  HERO / INTRO SECTION
-  =========================================
-*/
-
-.section--hero {
-  min-height: 100vh; /* Full height for nice first screen */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* Overlay for soft effect */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .hero-content {
-  background: linear-gradient(145deg, #ffffff, var(--color-primary-soft));
-  padding: 28px 20px 32px;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--color-border-soft);
+    position: relative;
+    z-index: 2;
+    padding: 20px;
 }
 
-.hero-small-text {
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.8rem;
-  color: var(--color-text-soft);
-  margin-bottom: 6px;
+/* Romantic title */
+.main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
-.hero-title {
-  font-size: 2rem;
-  margin-bottom: 8px;
+/* Nickname style */
+.nickname {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.hero-subtitle {
-  color: var(--color-text-soft);
-  margin-bottom: 18px;
+/* Scroll button */
+.scroll-btn {
+    padding: 12px 20px;
+    border: none;
+    background: white;
+    color: #ff4d6d;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
 }
 
-/* 
-  =========================================
-  BUTTONS
-  =========================================
-*/
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  font-size: 0.98rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
-    background-color var(--transition-fast), color var(--transition-fast);
+.scroll-btn:hover {
+    background: #ffe5ec;
+    transform: scale(1.05);
 }
 
-.btn:focus-visible {
-  outline: 2px solid var(--color-secondary);
-  outline-offset: 3px;
+/* ============================= */
+/* CELEBRATION SECTION */
+/* ============================= */
+
+.celebration-section {
+    background: #fff;
 }
 
-.btn--primary {
-  background: var(--color-primary);
-  color: #ffffff;
-  box-shadow: 0 10px 26px rgba(255, 107, 129, 0.35);
+.celebration-text {
+    max-width: 600px;
+    margin: auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-.btn--primary:hover,
-.btn--primary:active {
-  transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 14px 36px rgba(255, 107, 129, 0.45);
-}
-
-.btn--secondary {
-  background: #ffffff;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary-soft);
-}
-
-.btn--secondary:hover,
-.btn--secondary:active {
-  background: var(--color-primary-soft);
-  transform: translateY(-1px) scale(1.01);
-}
-
-/* 
-  =========================================
-  STORY SECTION
-  =========================================
-*/
-
-.section--story {
-  background: rgba(255, 255, 255, 0.86);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft);
-}
-
-.story-block {
-  margin-top: 18px;
-  padding: 16px 14px 14px;
-  border-radius: var(--radius-lg);
-  background: #fff;
-  border: 1px solid var(--color-primary-soft);
-}
-
-.story-heading {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-  color: var(--color-primary);
-}
-
-.story-text {
-  font-size: 0.96rem;
-  color: var(--color-text-soft);
-}
-
-/* 
-  =========================================
-  TIMELINE SECTION
-  =========================================
-*/
-
-.section--timeline {
-  margin-top: 18px;
-}
-
-.timeline {
-  list-style: none;
-  margin-top: 18px;
-  position: relative;
-  padding-left: 18px;
-}
-
-/* Vertical line */
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 6px;
-  width: 2px;
-  height: 100%;
-  background: var(--color-primary-soft);
-}
-
-/* Each item */
-.timeline-item {
-  position: relative;
-  padding-left: 16px;
-  margin-bottom: 18px;
-}
-
-/* The dot on the timeline */
-.timeline-dot {
-  position: absolute;
-  left: -1px;
-  top: 6px;
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  background: var(--color-primary);
-  box-shadow: 0 0 0 4px var(--color-primary-soft);
-}
-
-.timeline-content {
-  background: #fff;
-  border-radius: var(--radius-lg);
-  padding: 12px 12px 10px;
-  border: 1px solid var(--color-border-soft);
-}
-
-.timeline-title {
-  font-size: 1rem;
-  margin-bottom: 4px;
-  color: var(--color-text-main);
-}
-
-.timeline-text {
-  font-size: 0.94rem;
-  color: var(--color-text-soft);
-}
-
-/* 
-  =========================================
-  LETTER SECTION
-  =========================================
-*/
-
-.section--letter {
-  margin-top: 24px;
-}
-
-.letter-card {
-  background: linear-gradient(150deg, #ffffff, #ffeef3);
-  padding: 22px 18px 20px;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--color-primary-soft);
-}
-
-.letter-greeting {
-  font-family: var(--font-script);
-  font-size: 1.4rem;
-  margin-top: 4px;
-  margin-bottom: 12px;
-  color: var(--color-primary);
-}
-
-.letter-body p {
-  margin-bottom: 10px;
-  font-size: 0.96rem;
-  color: var(--color-text-soft);
-}
-
-.letter-signature {
-  margin-top: 14px;
-  font-size: 0.98rem;
-  text-align: right;
-  color: var(--color-text-main);
-}
-
-.signature-name {
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-/* 
-  =========================================
-  LOVE GRID SECTION
-  =========================================
-*/
-
-.section--love {
-  margin-top: 26px;
-}
-
-.love-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-top: 14px;
-}
-
-.love-card {
-  padding: 14px 12px 12px;
-  border-radius: var(--radius-lg);
-  background: #fff;
-  border: 1px solid var(--color-primary-soft);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
-    background-color var(--transition-fast);
-}
-
-.love-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  background: #fffafd;
-}
-
-.love-title {
-  font-size: 1rem;
-  margin-bottom: 5px;
-  color: var(--color-primary);
-}
-
-.love-text {
-  font-size: 0.94rem;
-  color: var(--color-text-soft);
-}
-
-/* 
-  =========================================
-  REASONS SECTION
-  =========================================
-*/
-
-.section--reasons {
-  margin-top: 26px;
-  background: #fff;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft);
-}
-
-.reasons-list {
-  list-style: none;
-  margin-top: 12px;
-}
-
-.reasons-item {
-  position: relative;
-  padding-left: 26px;
-  margin-bottom: 10px;
-  font-size: 0.95rem;
-  color: var(--color-text-soft);
-}
-
-/* Custom heart bullet */
-.reasons-item::before {
-  content: "❤";
-  position: absolute;
-  left: 4px;
-  top: 1px;
-  font-size: 0.78rem;
-  color: var(--color-primary);
-}
-
-/* 
-  =========================================
-  GALLERY SECTION
-  =========================================
-*/
-
-.section--gallery {
-  margin-top: 26px;
-}
+/* ============================= */
+/* PHOTO GALLERY */
+/* ============================= */
 
 .gallery-grid {
-  margin-top: 16px;
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
-  gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
 }
 
-.gallery-item {
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--color-border-soft);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+.gallery-img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.gallery-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+/* Hover effect */
+.gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 77, 109, 0.4);
 }
 
-.gallery-image {
-  width: 100%;
-  height: 140px;
-  object-fit: cover; /* Keeps image nicely cropped */
-}
+/* ============================= */
+/* VIDEO SECTION */
+/* ============================= */
 
-.gallery-caption {
-  font-size: 0.86rem;
-  text-align: center;
-  padding: 6px 6px 8px;
-  color: var(--color-text-soft);
-}
-
-/* 
-  =========================================
-  PROPOSAL SECTION
-  =========================================
-*/
-
-.section--proposal {
-  margin-top: 30px;
-}
-
-.proposal-inner {
-  text-align: center;
-  background: linear-gradient(160deg, #ffffff, #ffe1eb);
-  border-radius: var(--radius-xl);
-  padding: 24px 18px 22px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--color-primary-soft);
-}
-
-.proposal-text {
-  margin-top: 6px;
-  color: var(--color-text-soft);
-  font-size: 0.96rem;
-}
-
-.proposal-question {
-  margin-top: 10px;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.proposal-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 18px;
-  justify-content: center;
-}
-
-/* The message area where JS will show her response */
-.proposal-response {
-  margin-top: 16px;
-  min-height: 24px; /* Reserve small space so layout doesn't jump */
-  font-size: 0.98rem;
-  color: var(--color-text-main);
-}
-
-/* 
-  =========================================
-  FOOTER
-  =========================================
-*/
-
-.footer {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 0.82rem;
-  color: var(--color-text-soft);
-  opacity: 0.9;
-}
-
-.footer-text {
-  padding-top: 10px;
-}
-
-/* 
-  =========================================
-  SCROLL REVEAL ANIMATION CLASSES
-  (Will be used in JavaScript for Stage 4)
-  =========================================
-*/
-
-/* Default: elements will start slightly hidden and moved down */
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity var(--transition-med), transform var(--transition-med);
-}
-
-.reveal--visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 
-  =========================================
-  RESPONSIVE STYLES FOR LARGER SCREENS
-  Using mobile-first approach: 
-  we style for small screens above, then enhance here.
-  =========================================
-*/
-
-@media (min-width: 600px) {
-  .page-wrapper {
-    padding: 20px 20px 50px;
-  }
-
-  .hero-title {
-    font-size: 2.3rem;
-  }
-
-  .hero-content {
-    padding: 34px 30px 36px;
-  }
-
-  .section {
-    padding: 48px 20px;
-  }
-
-  .love-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columns on bigger screens */
-  }
-
-  .proposal-buttons {
-    flex-direction: row;
-  }
-
-  .proposal-buttons .btn {
-    min-width: 150px;
-  }
-}
-
-@media (min-width: 900px) {
-  .page-wrapper {
-    padding: 24px 24px 70px;
-  }
-
-  .section--story,
-  .section--reasons,
-  .section--letter,
-  .section--proposal {
-    padding: 40px 32px;
-  }
-
-  .timeline {
-    padding-left: 22px;
-  }
-
-  .timeline::before {
-    left: 10px;
-  }
-
-  .timeline-dot {
-    left: 3px;
-  }
-}
-/* =========================
-   Polaroid Photo Aesthetic
-   ========================= */
-   .polaroid-item {
-    background: #ffffff;
-    padding: 10px 10px 14px;
-    border-radius: 12px;
-    border: 1px solid var(--color-border-soft);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+.video-grid {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  
-  .polaroid-item:hover {
-    transform: translateY(-6px) rotate(-1.2deg);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
-  }
-  
-  .polaroid-img {
+    gap: 20px;
+}
+
+.video-card {
     width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 8px;
-  }
-  
-  .polaroid-caption {
-    font-family: "Segoe Script", cursive;
-    font-size: 0.85rem;
-    color: var(--color-text-main);
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* ============================= */
+/* LOVE LETTER SECTION */
+/* ============================= */
+
+.letter-section {
+    background: #ffe5ec;
+}
+
+.letter-content {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.2);
+}
+
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+    color: #d00000;
+}
+
+/* ============================= */
+/* FINAL SECTION */
+/* ============================= */
+
+.final-section {
+    background: linear-gradient(135deg, #ff4d6d, #d00000);
+    color: white;
+}
+
+.valentine-btn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #d00000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.valentine-btn:hover {
+    transform: scale(1.1);
+    background: #ffe5ec;
+}
+
+/* ============================= */
+/* POPUP STYLING */
+/* ============================= */
+
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
     text-align: center;
-    padding: 0 4px;
-  }
-  
+}
+
+.popup-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* ============================= */
+/* MUSIC BUTTON */
+/* ============================= */
+
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px;
+    border-radius: 50%;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+/* Tablet */
+@media (min-width: 768px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-grid {
+        flex-direction: row;
+    }
+
+    .video-card {
+        flex: 1;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+
+    .main-title {
+        font-size: 3.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* ============================= */
+/* FLOATING HEARTS ANIMATION */
+/* ============================= */
+
+.heart {
+    position: fixed;
+    bottom: -10px;
+    animation: floatUp linear forwards;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+
+/* ============================= */
+/* CONFETTI */
+/* ============================= */
+
+.confetti {
+    position: fixed;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    opacity: 0.8;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
